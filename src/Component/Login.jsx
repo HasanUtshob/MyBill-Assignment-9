@@ -14,14 +14,6 @@ const Login = () => {
     "auth/invalid-email": "ইমেইল ঠিকভাবে লিখুন।",
     "auth/missing-password": "পাসওয়ার্ড দিন।",
   };
-  // useEffect(() => {
-  //   const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
-  //     setuser(CurrentUser);
-  //   });
-  //   return () => {
-  //     unSubscribe();
-  //   };
-  // }, [setuser]);
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -37,11 +29,10 @@ const Login = () => {
         const errorCode = error.code;
         const friendlyMassage =
           errorMessages[errorCode] ?? "Something Went Wrong. Please Try again";
-        // const errorMessage = error.message;
         seterror(friendlyMassage);
       });
   };
-  // const displayError = error ?? "Something Went Wrong";
+
   const handleGoogleLogin = () => {
     GoogleLogin()
       .then((res) => {
