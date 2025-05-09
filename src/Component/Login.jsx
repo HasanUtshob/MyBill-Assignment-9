@@ -125,12 +125,12 @@ const Login = () => {
                       </label>
                     </div>
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    to="/forgetPassword"
                     className="text-sm font-medium text-white hover:underline dark:text-primary-500"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
                 {error && <p className="text-red-500 text-xs"> {error} </p>}
                 <button

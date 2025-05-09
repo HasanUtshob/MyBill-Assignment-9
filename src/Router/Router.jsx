@@ -9,6 +9,7 @@ import TransactionHistory from "../Component/TransactionHistory";
 import Login from "../Component/Login";
 import Registration from "../Component/Registration";
 import PrivateRoute from "../AuthProvider/PrivateRoute";
+import forgetPassword from "../Component/forgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/reg",
         Component: Registration,
+      },
+      {
+        path: "/forgetPassword",
+        Component: forgetPassword,
       },
     ],
   },
