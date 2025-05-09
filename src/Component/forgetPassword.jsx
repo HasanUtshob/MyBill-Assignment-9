@@ -1,14 +1,27 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Bounce, toast } from "react-toastify";
+import { use } from "react";
 
 const forgetPassword = () => {
-  const { forgetPassword } = useContext(AuthContext);
+  const { forgetPassword } = use(AuthContext);
   const handleReset = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     forgetPassword(email)
       .then(() => {
-        alert("Password Sent Your Email SuccessFully");
+        // alert("Password Sent Your Email SuccessFully");
+        toast.success("Password Sent Your Email SuccessFully", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       })
       .catch((error) => {
         const errorCode = error.code;
