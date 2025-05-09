@@ -46,7 +46,10 @@ const Login = () => {
   // const displayError = error ?? "Something Went Wrong";
   const handleGoogleLogin = () => {
     GoogleLogin()
-      .then((res) => setuser(res.user))
+      .then((res) => {
+        setuser(res.user);
+        navigate(location.state ? location.state : "/");
+      })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
