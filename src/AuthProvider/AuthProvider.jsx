@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase_init";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -35,7 +36,17 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     signOut(auth)
       .then(() => {
-        alert("SignOut SuccessFully");
+        toast.success("LogOut SuccessFul", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -76,7 +87,7 @@ const AuthProvider = ({ children }) => {
     UpdateUser,
     forgetPassword,
   };
-
+  <ToastContainer></ToastContainer>;
   return (
     <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
   );

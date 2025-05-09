@@ -2,9 +2,11 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
-  const { setuser, Login, GoogleLogin } = useContext(AuthContext);
+  const { setuser, Login, GoogleLogin, toastifySuccess } =
+    useContext(AuthContext);
   const [error, seterror] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ const Login = () => {
     Login(email, password)
       .then((res) => {
         setuser(res.user);
+        alert("Login Successful");
         navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
@@ -42,6 +45,7 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+
         console.log(errorCode, errorMessage);
       });
   };
@@ -145,6 +149,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
