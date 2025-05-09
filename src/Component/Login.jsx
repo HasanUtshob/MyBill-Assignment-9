@@ -1,7 +1,5 @@
-import { onAuthStateChanged } from "firebase/auth";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import { auth } from "../firebase_init";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
@@ -16,14 +14,14 @@ const Login = () => {
     "auth/invalid-email": "ইমেইল ঠিকভাবে লিখুন।",
     "auth/missing-password": "পাসওয়ার্ড দিন।",
   };
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
-      setuser(CurrentUser);
-    });
-    return () => {
-      unSubscribe();
-    };
-  }, [setuser]);
+  // useEffect(() => {
+  //   const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
+  //     setuser(CurrentUser);
+  //   });
+  //   return () => {
+  //     unSubscribe();
+  //   };
+  // }, [setuser]);
   const handleLogin = (e) => {
     e.preventDefault();
 
