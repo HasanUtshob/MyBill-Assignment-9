@@ -1,0 +1,11 @@
+.Navmenu li {
+  padding: 10px;
+}
+
+.active {
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: blue;
+}

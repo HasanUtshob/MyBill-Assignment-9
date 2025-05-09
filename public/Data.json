@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "bill_type": "electricity",
+    "icon": "https://img.icons8.com/?size=100&id=z4ukMPv9Thst&format=png&color=000000",
+    "organization": "DESCO",
+    "amount": 1250,
+    "due_date": "2025-05-10"
+  },
+  {
+    "id": "2",
+    "bill_type": "gas",
+    "icon": "https://img.icons8.com/?size=100&id=MsBq16fZWBLk&format=png&color=000000",
+    "organization": "Titas Gas",
+    "amount": 900,
+    "due_date": "2025-05-12"
+  },
+  {
+    "id": "3",
+    "bill_type": "internet",
+    "icon": "https://img.icons8.com/?size=100&id=13047&format=png&color=000000",
+    "organization": "Link3",
+    "amount": 1500,
+    "due_date": "2025-05-08"
+  },
+  {
+    "id": "4",
+    "bill_type": "water",
+    "icon": "https://img.icons8.com/?size=100&id=13101&format=png&color=000000",
+    "organization": "WASA",
+    "amount": 450,
+    "due_date": "2025-05-15"
+  },
+  {
+    "id": "5",
+    "bill_type": "credit card",
+    "icon": "https://img.icons8.com/?size=100&id=lWWE908jTJ3m&format=png&color=000000",
+    "organization": "DBBL",
+    "amount": 3200,
+    "due_date": "2025-05-18"
+  },
+  {
+    "id": "6",
+    "bill_type": "tuition",
+    "icon": "https://img.icons8.com/?size=100&id=79060&format=png&color=000000",
+    "organization": "Greenwood School",
+    "amount": 1800,
+    "due_date": "2025-05-05"
+  },
+  {
+    "id": "7",
+    "bill_type": "college",
+    "icon": "https://img.icons8.com/?size=100&id=XbkA4ZAheeHU&format=png&color=000000",
+    "organization": "Dhaka College",
+    "amount": 2000,
+    "due_date": "2025-05-20"
+  }
+]
