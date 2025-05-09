@@ -31,7 +31,14 @@ const Navber = () => {
     <nav>
       <div className="navbar justify-between bg-base-100 shadow-lg rounded-2xl">
         <div className="flex">
-          <a className="btn btn-ghost text-xl">MyBill</a>
+          <a className="btn flex btn-ghost text-xl">
+            <img
+              className="w-10"
+              src="https://i.ibb.co.com/LXnhtYH8/pay.png"
+              alt=""
+            />
+            <p className="text-purple-400">MyBill</p>
+          </a>
         </div>
         <div>
           <ul className="flex gap-4 Navmenu ">{link}</ul>
