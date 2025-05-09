@@ -4,6 +4,7 @@ import Feature from "./Feature";
 import UserReview from "./UserReview";
 import CustomerCare from "./CustomerCare";
 import OurSecurity from "./OurSecurity";
+import { ToastContainer } from "react-toastify";
 
 const HomeMainLayOut = () => {
   return (
@@ -23,6 +24,7 @@ const HomeMainLayOut = () => {
       <div>
         <OurSecurity></OurSecurity>
       </div>
+      <ToastContainer />
     </>
   );
 };

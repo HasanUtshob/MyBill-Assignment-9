@@ -1,6 +1,7 @@
 import React, { use, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const BillsCard = ({ SingleBill }) => {
   const { id, icon, organization, amount, bill_type, due_date } = SingleBill;
@@ -10,15 +11,35 @@ const BillsCard = ({ SingleBill }) => {
   const navigate = useNavigate();
   const handleBill = () => {
     if (Clicked) {
-      alert("Already Pay");
-      return;
+      return toast.warn("Already Pay Your Bill", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     } else {
       setbalance(balance - amount);
       setbUpdate(false);
       setClicked(true);
+      toast.success("Pay Your Bill SuccessFully", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
       setTimeout(() => {
         navigate(`/transactionhistory/${id}`);
-      }, 1000);
+      }, 4000);
     }
   };
 
@@ -40,6 +61,7 @@ const BillsCard = ({ SingleBill }) => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
